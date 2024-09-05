@@ -28,7 +28,7 @@ LINUXINCLUDE    += \
 		-include $(srctree)/techpack/camera/config/bengalcameraconf.h
 endif
 
-ifdef CONFIG_SPECTRA_CAMERA
+ifdef CONFIG_SPECTRA_CAMERA_KONA
 # Use USERINCLUDE when you must reference the UAPI directories only.
 USERINCLUDE     += \
                 -I$(srctree)/techpack/camera/include/uapi

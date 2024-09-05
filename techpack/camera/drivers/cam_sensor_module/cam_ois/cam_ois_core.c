@@ -15,6 +15,8 @@
 #include "cam_res_mgr_api.h"
 #include "cam_common_util.h"
 #include "cam_packet_util.h"
+#include "cam_trace.h"
+
 #include "oplus_cam_ois_core.h"
 #include "onsemi_fw/fw_download_interface.h"
 
@@ -199,7 +201,7 @@ static int cam_ois_power_down(struct cam_ois_ctrl_t *o_ctrl)
 #ifdef OPLUS_FEATURE_CAMERA_COMMON
 	/*we need to exit poll thread befor power down*/
 	mutex_lock(&(o_ctrl->ois_poll_thread_mutex));
-	forceExitpoll(o_ctrl);
+	//forceExitpoll(o_ctrl);
 	rc = cam_sensor_util_power_down(power_info, soc_info);
 	mutex_unlock(&(o_ctrl->ois_poll_thread_mutex));
 #else
